@@ -1,6 +1,5 @@
 package base.pages;
 
-import base.pages.catalog.SelectedCategoryPage;
 import io.qameta.allure.Step;
 import managers.DriverManager;
 import org.openqa.selenium.By;

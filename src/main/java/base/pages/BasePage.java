@@ -31,8 +31,8 @@ public class BasePage {
 
     @Step
     public void elementWait(WebElement element) {
-        //wait.until(ExpectedConditions.visibilityOf(element));
-        wait.until(ExpectedConditions.elementToBeClickable(element));
+        wait.until(ExpectedConditions.visibilityOf(element));
+        //wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
 }

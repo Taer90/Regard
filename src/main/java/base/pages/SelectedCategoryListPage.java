@@ -1,6 +1,5 @@
-package base.pages.catalog.PcComponents;
+package base.pages;
 
-import base.pages.BasePage;
 import io.qameta.allure.Step;
 import managers.DriverManager;
 import org.junit.Assert;
@@ -42,17 +41,17 @@ public class SelectedCategoryListPage extends BasePage {
 
     @Step("Дождаться выполнения поиска")
     public SelectedCategoryListPage waitLoadingEnd() {
-//        try {
-//            Thread.sleep(500);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 //        elementWait(firstItemLink);
         elementWait(firstItemLink);
         return this;
     }
 
-    @Step("Проверить, что в поисковой выдаче не более 24 товаров (значение из выпадающего списка 'Товаров на странице' внизу страницы)")
+    @Step("Проверить, что в поисковой выдаче не более 24 товаров (значение из выпадающего списка Товаров на странице внизу страницы)")
     public SelectedCategoryListPage checkCountOfItems() {
         Assert.assertEquals("по 24", countItems.getText());
         return this;
@@ -73,11 +72,11 @@ public class SelectedCategoryListPage extends BasePage {
 
     @Step("Проверить, что в поисковой выдаче не более 1 товара")
     public SelectedCategoryListPage checkCountOfItemsOnTop() {
-//        try {
-//            Thread.sleep(5000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         elementWait(firstItemNameAfterSearch);
         Assert.assertEquals("1 товар", countItemTop.getText());
         return this;

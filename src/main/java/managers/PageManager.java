@@ -2,8 +2,8 @@ package managers;
 
 
 import base.pages.MainPage;
-import base.pages.catalog.PcComponents.SelectedCategoryListPage;
-import base.pages.catalog.SelectedCategoryPage;
+import base.pages.SelectedCategoryListPage;
+import base.pages.SelectedCategoryPage;
 
 public class PageManager {
     private static PageManager INSTANCE = null;

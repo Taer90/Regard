@@ -9,7 +9,7 @@ public class Tests extends BaseTests {
         pageManager.getMainPage()
                 .openCatalog()
                 .chooseCategory("Комплектующие для ПК")
-                .chooseCategory1("Видеокарты")
+                .chooseSubcategory("Видеокарты")
                 .setMinPrice("20000")
                 .сhooseManufacturer("Gigabyte")
                 .waitLoadingEnd()
@@ -18,6 +18,21 @@ public class Tests extends BaseTests {
                 .enterSearchText()
                 .checkCountOfItemsOnTop()
                 .compareItemName();
+    }
 
+    @Test
+    public void secondTest() {
+        pageManager.getMainPage()
+                .openCatalog()
+                .chooseCategory("Периферия")
+                .chooseSubcategory("Клавиатуры")
+                .setMinPrice("2000")
+                .сhooseManufacturer("A4Tech")
+                .waitLoadingEnd()
+                .checkCountOfItems()
+                .getFirstItemName()
+                .enterSearchText()
+                .checkCountOfItemsOnTop()
+                .compareItemName();
     }
 }
