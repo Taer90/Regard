@@ -45,5 +45,11 @@ public class PageManager {
         return selectedCategoryListPage;
     }
 
+    public void quitPages() {
+        if (INSTANCE != null) {
+            INSTANCE = null;
+        }
+    }
+
 
 }

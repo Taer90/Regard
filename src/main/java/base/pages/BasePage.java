@@ -4,6 +4,7 @@ import io.qameta.allure.Step;
 import managers.DriverManager;
 import managers.PageManager;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -31,7 +32,11 @@ public class BasePage {
 
     @Step
     public void elementWait(WebElement element) {
-        wait.until(ExpectedConditions.visibilityOf(element));
+        DriverManager.getInstance().getDriver().manage().timeouts().implicitlyWait(Duration.ofMillis(100));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(@class,'skeleton')]")));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[contains(@class,'skeleton')]")));
+        DriverManager.getInstance().getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        //wait.until(ExpectedConditions.visibilityOf(element));
         //wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 

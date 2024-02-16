@@ -15,7 +15,7 @@ public class SelectedCategoryListPageSteps {
 
     @И("^Выбрать производителя \"(.+)\"$")
     public void сhooseManufacturer(String name) {
-        pageManager.getSelectedCategoryListPage().сhooseManufacturer(name);
+        pageManager.getSelectedCategoryListPage().chooseManufacturer(name);
     }
 
     @И("^Дождаться выполнения поиска$")

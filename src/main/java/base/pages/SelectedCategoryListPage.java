@@ -34,19 +34,18 @@ public class SelectedCategoryListPage extends BasePage {
     }
 
     @Step("Выбрать производителя \"(.+)\"")
-    public SelectedCategoryListPage сhooseManufacturer(String name) {
+    public SelectedCategoryListPage chooseManufacturer(String name) {
         DriverManager.getInstance().getDriver().findElement(By.xpath("//label[text()='" + name + "']/../../..")).click();
         return this;
     }
 
     @Step("Дождаться выполнения поиска")
     public SelectedCategoryListPage waitLoadingEnd() {
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-//        elementWait(firstItemLink);
+//        try {
+//            Thread.sleep(500);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
         elementWait(firstItemLink);
         return this;
     }
@@ -72,11 +71,11 @@ public class SelectedCategoryListPage extends BasePage {
 
     @Step("Проверить, что в поисковой выдаче не более 1 товара")
     public SelectedCategoryListPage checkCountOfItemsOnTop() {
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
         elementWait(firstItemNameAfterSearch);
         Assert.assertEquals("1 товар", countItemTop.getText());
         return this;
